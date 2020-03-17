@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #                                                      
 #                                                      
 #                           ,---,                      
@@ -20,12 +27,6 @@
 #										    #
 #####################################################################################
 
-#print "
-#█░░░█ █▀▀ █░░ █▀▀ █▀▀█ █▀▄▀█ █▀▀  █▀▀█ █▀▀▄ █▀▀█ █▀▄▀█
-#█▄█▄█ █▀▀ █░░ █░░ █░░█ █░▀░█ █▀▀  █▄▄█ █░░█ █▄▄█ █░▀░█
-#░▀░▀░ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ ▀░░░▀ ▀▀▀  ▀░░▀ ▀▀▀░ ▀░░▀ ▀░░░▀"
-
-fortune | cowsay -f err
 #####################################################################################
 #										    #
 #                                   ALIAS					    #
@@ -62,7 +63,7 @@ export ZSH="/Users/adam/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-ZSH_THEME="obraun"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 #Good themes - agnoster, fino, duellj, suvash, bira, gnzh, jtriley, kolo, mrtazz, minimal
 #norm, obraun
@@ -152,5 +153,5 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 
-
-
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
